@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hello World |  Monkey D Luffy</title>
+      <title>css进阶 |  Monkey D Luffy</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hello-world"
+  id="post-css进阶"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hello World
+  css进阶
 </h1>
  
 
@@ -75,15 +75,19 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/03/10/hello-world/" class="article-date">
-  <time datetime="2024-03-10T01:53:15.782Z" itemprop="datePublished">2024-03-10</time>
-</a>   
+      <a href="/2024/03/10/css%E8%BF%9B%E9%98%B6/" class="article-date">
+  <time datetime="2024-03-09T16:00:00.000Z" itemprop="datePublished">2024-03-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">75</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -92,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -107,19 +111,255 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  <h1 id="选择器进阶"><a href="#选择器进阶" class="headerlink" title="选择器进阶"></a>选择器进阶</h1><h2 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h2><ol>
+<li>后代选择器</li>
+</ol>
+<ul>
+<li>作用：根据HTML标签的嵌套关系，选择父元素后代中满足条件的元素</li>
+<li>选择器语法：<code>选择器1 选择器2&#123;css&#125;</code></li>
+<li>结果：在选择器1所找到的标签后代（儿子，孙子，重孙子）中，找到满足选择器2的标签，设置样式</li>
+<li>注意点：后代包括儿子，孙子，重孙子……后代选择器中，选择器与选择器中通过空格隔开</li>
+</ul>
+<ol start="2">
+<li>子代选择器</li>
+</ol>
+<ul>
+<li>作用：根据HTML标签的嵌套关系，选择父元素子代中满足条件的元素</li>
+<li>选择器语法：<code>选择器1 &gt; 选择器2&#123;css&#125;</code></li>
+<li>结果：在选择器1所找到的标签的子代（儿子）中，找到满足选择器2的标签，设置样式</li>
+<li>注意点：子代只包括儿子，子代选择器中，选择器与选择器之间通过<code>&gt;</code>隔开</li>
+</ul>
+<h2 id="并集选择器"><a href="#并集选择器" class="headerlink" title="并集选择器"></a>并集选择器</h2><ul>
+<li>作用：同时选择多组标签，设置相同的样式</li>
+<li>选择器语法：<code>选择器1,选择器2&#123;css&#125;</code></li>
+<li>结果：找到选择器1和选择器2选中的标签，设置样式</li>
+<li>注意点：<ol>
+<li>并集选择器的每组选择器之间通过逗号分隔</li>
+<li>并集选择器中每组选择器可以是基础选择器或者复合选择器</li>
+<li>并集选择器中的每组选择器通常一行写一个，提高代码的可读性</li>
+</ol>
+</li>
+</ul>
+<h2 id="交集选择器"><a href="#交集选择器" class="headerlink" title="交集选择器"></a>交集选择器</h2><ul>
+<li>作用：选中页面中同时满足多个选择器的标签</li>
+<li>选择器语法：<code>选择器1选择器2&#123;css&#125;</code></li>
+<li>结果：找到页面中既能被选择器1选中，又能被选择器2选中的标签，设置样式</li>
+<li>注意点<ol>
+<li>交集选择器中的选择器之间是紧挨着的，没有东西分隔</li>
+<li>交集选择器中如果有标签选择器，标签选择器必须写在最前面</li>
+</ol>
+</li>
+</ul>
+<h2 id="hover伪类选择器"><a href="#hover伪类选择器" class="headerlink" title="hover伪类选择器"></a>hover伪类选择器</h2><ul>
+<li>作用：选中鼠标悬停在元素上的状态，设置样式</li>
+<li>选择器语法：<code>选择器:hover&#123;css&#125;</code></li>
+<li>注意点：伪类选择器选中的元素的某种状态</li>
+</ul>
+<h2 id="Emmet语法"><a href="#Emmet语法" class="headerlink" title="Emmet语法"></a>Emmet语法</h2><p>作用：在vscode中通过简写语法，快速生成代码</p>
+<table>
+<thead>
+<tr>
+<th align="center">记忆</th>
+<th align="center">示例</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">标签名</td>
+<td align="center">div</td>
+<td align="center"><code>&lt;div&gt;&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td align="center">类选择器</td>
+<td align="center">.red</td>
+<td align="center"><code>&lt;div class=&quot;red&quot;&gt;&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td align="center">id选择器</td>
+<td align="center">#one</td>
+<td align="center"><code>&lt;div id=&quot;one&quot;&gt;&lt;/div&gt;</code></td>
+</tr>
+<tr>
+<td align="center">交集选择器</td>
+<td align="center">p.red#one</td>
+<td align="center"><code>&lt;p class=&quot;red&quot; id=&quot;one&quot;&gt;&lt;/p&gt;</code></td>
+</tr>
+<tr>
+<td align="center">子代选择器</td>
+<td align="center">ul&gt;li</td>
+<td align="center"><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></td>
+</tr>
+<tr>
+<td align="center">创建多个</td>
+<td align="center">ul&gt;li*3</td>
+<td align="center"><code>略</code></td>
+</tr>
+</tbody></table>
+<h1 id="背景相关属性"><a href="#背景相关属性" class="headerlink" title="背景相关属性"></a>背景相关属性</h1><h2 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h2><ul>
+<li>属性名：<code>background-color</code>（简写方式：输入bgc回车）</li>
+<li>属性值：颜色取值（关键字，rgb表示法，rgba表示法，十六进制）</li>
+<li>注意点<ul>
+<li>背景颜色默认值是透明：rgba(0,0,0,0),transparent</li>
+<li>背景颜色不会影响盒子大小，并且还能看清盒子的大小和位置，一般在布局中会习惯先给盒子设置背景颜色</li>
+</ul>
+</li>
+</ul>
+<h2 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h2><ul>
+<li>属性名：<code>background-image</code>（简写方式：输入bgi回车）</li>
+<li>属性值：<code>url（图片地址）</code></li>
+<li>注意点：<ul>
+<li>背景图片中url可以省略引号</li>
+<li>背景图片默认是在水平和垂直方向铺的</li>
+<li>背景图片仅仅是只给盒子起到装饰效果，类似于背景颜色，是不能撑开盒子的</li>
+</ul>
+</li>
+</ul>
+<h2 id="背景平铺"><a href="#背景平铺" class="headerlink" title="背景平铺"></a>背景平铺</h2><ul>
+<li>属性名：<code>background-repeat</code>(bgr)</li>
+<li>属性值</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">取值</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">repeat</td>
+<td align="center">（默认值）水平和垂直方向都平铺</td>
+</tr>
+<tr>
+<td align="center">no-repeat</td>
+<td align="center">不平铺</td>
+</tr>
+<tr>
+<td align="center">repeat-x</td>
+<td align="center">沿着水平方向（x轴）平铺</td>
+</tr>
+<tr>
+<td align="center">repeat-y</td>
+<td align="center">沿着垂直方向（y轴）平铺</td>
+</tr>
+</tbody></table>
+<h2 id="背景位置"><a href="#背景位置" class="headerlink" title="背景位置"></a>背景位置</h2><ul>
+<li>属性名：<code>background-position</code>(bgp)</li>
+<li>属性值：水平方向位置，垂直方向位置</li>
+<li>注意点：方位名词取值和坐标取值可以混使用，第一个取值表示水平，第二个取值表示垂直</li>
+</ul>
+<h2 id="背景相关属性连写"><a href="#背景相关属性连写" class="headerlink" title="背景相关属性连写"></a>背景相关属性连写</h2><ul>
+<li>属性名：<code>background</code>(bg)</li>
+<li>属性值：单个属性值的合写，取值之间以空格隔开</li>
+<li>书写顺序推荐：background: color image repeat position</li>
+<li>省略问题：可以按照需求省略，在pc端，如果盒子大小和背景图片大小一样，此时可以直接写background:url()</li>
+<li>注意点<ul>
+<li>如果需要设置单独的样式和连写</li>
+<li>①要么把单独的样式写在连写的下面</li>
+<li>②要么把单独的样式写在连写的里面</li>
+</ul>
+</li>
+</ul>
+<h1 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h1><h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2><ul>
+<li>显示特点<ol>
+<li>独占一行（一行只能显示一个）</li>
+<li>宽度默认是父元素的宽度，高度默认由内容撑开</li>
+<li>可以设置宽高</li>
+</ol>
+</li>
+<li>代表标签：div,p,h系列,ul,li,dl,dt,dd,form,header,nav,footer</li>
+</ul>
+<h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2><ul>
+<li>显示特点<ol>
+<li>一行可以显示多个</li>
+<li>宽度和高度默认由内容撑开</li>
+<li>不可以设置宽高</li>
+</ol>
+</li>
+<li>代表标签：a,span,b,u,i,s,strong,ins,em ,del</li>
+</ul>
+<h2 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h2><ul>
+<li>显示特点<ol>
+<li>一行可以显示多个</li>
+<li>可以设置宽高</li>
+</ol>
+</li>
+<li>代表标签<ol>
+<li>input,textarea,button,select</li>
+<li>特殊情况：img标签有行内块元素特点，但是Chrome调试工具中显示结果是inline</li>
+</ol>
+</li>
+</ul>
+<h2 id="元素显示模式转换"><a href="#元素显示模式转换" class="headerlink" title="元素显示模式转换"></a>元素显示模式转换</h2><ul>
+<li>目的：改变元素默认的显示特点，让元素符合布局要求</li>
+<li>语法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">效果</th>
+<th align="center">使用频率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">display: block</td>
+<td align="center">转换成块级元素</td>
+<td align="center">较多</td>
+</tr>
+<tr>
+<td align="center">display: inline-block</td>
+<td align="center">转换成行内块元素</td>
+<td align="center">较多</td>
+</tr>
+<tr>
+<td align="center">display:inline</td>
+<td align="center">转换成行内元素</td>
+<td align="center">极少</td>
+</tr>
+</tbody></table>
+<h2 id="拓展：HTML嵌套规范注意点"><a href="#拓展：HTML嵌套规范注意点" class="headerlink" title="拓展：HTML嵌套规范注意点"></a>拓展：HTML嵌套规范注意点</h2><ol>
+<li>块级元素一般作为大容器，可以嵌套：文本，块级元素，行内元素，行内块元素等等，但是p标签中不要嵌套div,p,h等块级元素</li>
+<li>a标签内部可以嵌套任意元素，但是a标签不能嵌套a标签</li>
+</ol>
+<h1 id="CSS特性"><a href="#CSS特性" class="headerlink" title="CSS特性"></a>CSS特性</h1><ol>
+<li>继承性</li>
+</ol>
+<ul>
+<li>特性：子元素有默认继承父元素样式的特点</li>
+<li>可以继承的常见属性<ol>
+<li>color</li>
+<li>font-style,font-weight,font-size,font-family</li>
+<li>text-indent,text-align</li>
+<li>line-height</li>
+<li>……</li>
+</ol>
+</li>
+<li>注意点：可以通过调试工具判断样式是否可继承，控制文字的属性都能继承，不是控制文字的不能继承</li>
+</ul>
+<ol start="2">
+<li>层叠性</li>
+</ol>
+<ul>
+<li>特性<ol>
+<li>给同一个标签设置不同的样式-&gt;此时样式会层叠叠加-&gt;会共同作用在标签上</li>
+<li>给同一个标签设置相同的样式-&gt;此时样式会层叠覆盖-&gt;最终写在最后的样式会生效</li>
+</ol>
+</li>
+<li>注意点：当样式冲突时，只有当选择器优先级相同时，才能通过层叠性判断结果</li>
+</ul>
+<ol start="3">
+<li>优先级</li>
+</ol>
+<ul>
+<li>特性：不同选择器具有不同优先级，优先级高的选择器样式会覆盖优先级低选择器样式</li>
+<li>优先级公式<br>继承＜通配符选择器＜标签选择器＜类选择器＜id选择器＜行内样式＜!important</li>
+<li>注意点<ol>
+<li>!important写在属性值的后面，分号的前面</li>
+<li>!important不能提升继承的优先级，只要是继承优先级最低</li>
+<li>实际开发中不建议使用!important</li>
+</ol>
+</li>
+</ul>
  
       <!-- reward -->
       
@@ -184,21 +424,32 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/03/10/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/03/10/css%E8%BF%9B%E9%98%B6/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
-    
       <a href="/2024/03/10/css%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            CSS基础认知
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2024/03/09/md-study/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">CSS基础认知</div>
+        <div class="article-nav-title">markdown基础学习</div>
       </a>
     
   </nav>

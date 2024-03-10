@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hello World |  Monkey D Luffy</title>
+      <title>CSS基础认知 |  Monkey D Luffy</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,7 +56,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-hello-world"
+  id="post-css基础认知"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -67,7 +67,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hello World
+  CSS基础认知
 </h1>
  
 
@@ -75,15 +75,19 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/03/10/hello-world/" class="article-date">
-  <time datetime="2024-03-10T01:53:15.782Z" itemprop="datePublished">2024-03-10</time>
-</a>   
+      <a href="/2024/03/10/css%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" class="article-date">
+  <time datetime="2024-03-09T16:00:00.000Z" itemprop="datePublished">2024-03-10</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+  
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">75</span>
+            <span class="post-count">1.5k</span>
         </span>
     </span>
 
@@ -92,7 +96,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
+            <span class="post-count">5 min</span>
         </span>
     </span>
 </div>
@@ -107,19 +111,213 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+  <h1 id="CSS介绍"><a href="#CSS介绍" class="headerlink" title="CSS介绍"></a>CSS介绍</h1><p>CSS：层叠样式表（Cascading Style Sheets）</p>
+<h2 id="CSS语法规则"><a href="#CSS语法规则" class="headerlink" title="CSS语法规则"></a>CSS语法规则</h2><p>CSS写在style标签中，style标签一般写在head标签里面，title标签下面<br>写法：<code>选择器&#123;属性名：属性值;&#125;</code></p>
+<h2 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a>CSS引入方式</h2><ul>
+<li>内嵌式：CSS写在style标签中<ul>
+<li>提示：style标签虽然可以写在页面任意位置，但是通常约定写在head标签中</li>
+</ul>
+</li>
+<li>外联式：CSS写在一个单独的<code>.css</code>文件中<ul>
+<li>提示：需要通过link标签在网页中引入</li>
+</ul>
+</li>
+<li>行内式：CSS写在标签的style属性中<ul>
+<li>提示：暂时不推荐使用，之后会配合js使用</li>
+</ul>
+</li>
+</ul>
+<p>CSS三种引入方式的特点</p>
+<table>
+<thead>
+<tr>
+<th align="center">引入方式</th>
+<th align="center">书写位置</th>
+<th align="center">作用范围</th>
+<th align="center">使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">内联式</td>
+<td align="center">CSS写在style标签中</td>
+<td align="center">当前页面</td>
+<td align="center">小案例</td>
+</tr>
+<tr>
+<td align="center">外联式</td>
+<td align="center">CSS写在单独的CSS文件中，通过link标签引入</td>
+<td align="center">多个页面</td>
+<td align="center">项目中</td>
+</tr>
+<tr>
+<td align="center">行内式</td>
+<td align="center">CSS写在标签的style属性中</td>
+<td align="center">当前标签</td>
+<td align="center">配合javascript使用</td>
+</tr>
+</tbody></table>
+<h1 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h1><h2 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h2><ul>
+<li>结构：<code>标签名&#123;css属性名：属性值；&#125;</code></li>
+<li>作用：通过标签名，找到页面中所有这类标签，设置样式</li>
+<li>注意点：<ol>
+<li>标签选择器选择的是一类标签，而不是单独某一个</li>
+<li>标签选择器无论嵌套关系有多深，都能找到对应的标签</li>
+</ol>
+</li>
+</ul>
+<h2 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h2><ul>
+<li>结构：<code>.类名&#123;css属性名:属性值;&#125;</code></li>
+<li>作用：通过类名，找到页面中所有带有这个类名的标签，设置样式</li>
+<li>注意点<ol>
+<li>所有标签上都有class属性，class属性的属性值称为类名（类似于名字）</li>
+<li>类名可以由数字，字母，下划线，中划线组成，但不能以数字或者中划线开头</li>
+<li>一个标签可以同时有多个类名，类名之间以空格隔开</li>
+<li>类名可以重复，一个类选择器可以同时选中多个标签</li>
+</ol>
+</li>
+</ul>
+<h2 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h2><ul>
+<li>结构：<code>#id属性值&#123;css属性名:属性值;&#125;</code></li>
+<li>作用：通过id属性值，找到页面中带有这个id属性值的标签，设置样式</li>
+<li>注意点<ol>
+<li>所有标签上都有id属性</li>
+<li>id属性值类似于身份证号码，在一个页面中是唯一的，不可重复的</li>
+<li>一个标签上只能由一个id属性值</li>
+<li>一个id选择器只能选中一个标签</li>
+</ol>
+</li>
+</ul>
+<h2 id="通配符选择器"><a href="#通配符选择器" class="headerlink" title="通配符选择器"></a>通配符选择器</h2><ul>
+<li>结构：<code>*&#123;css属性名:属性值;&#125;</code></li>
+<li>作用：找到页面中所有的标签，设置样式</li>
+<li>注意点<ol>
+<li>开发中使用极少，只会在极特殊情况下才会用到</li>
+</ol>
+</li>
+</ul>
+<h1 id="字体和文本样式"><a href="#字体和文本样式" class="headerlink" title="字体和文本样式"></a>字体和文本样式</h1><h2 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h2><h3 id="字体大小font-size"><a href="#字体大小font-size" class="headerlink" title="字体大小font-size"></a>字体大小font-size</h3><ul>
+<li>属性名：<code>font-size</code></li>
+<li>取值：<code>数字+px</code></li>
+<li>注意点<ol>
+<li>谷歌浏览器默认文字是16px</li>
+<li>单位需要设置，否则无效</li>
+</ol>
+</li>
+</ul>
+<h3 id="字体粗细font-weight"><a href="#字体粗细font-weight" class="headerlink" title="字体粗细font-weight"></a>字体粗细font-weight</h3><ul>
+<li>属性名：<code>font-weight</code></li>
+<li>取值：<ul>
+<li>关键字：normal(正常)，bold(加粗)</li>
+<li>纯数字：100~900的整百数,400(正常)，700(加粗)</li>
+</ul>
+</li>
+<li>注意点<ol>
+<li>不是所有字体都提供了九种粗细，因此部分取值页面中无变化</li>
+<li>实际开发中以：正常，加粗两种取值使用最多</li>
+</ol>
+</li>
+</ul>
+<h3 id="字体样式font-style"><a href="#字体样式font-style" class="headerlink" title="字体样式font-style"></a>字体样式font-style</h3><ul>
+<li>属性名：<code>font-style</code></li>
+<li>取值：<ul>
+<li>正常（默认值）：<code>normal</code></li>
+<li>倾斜：<code>italic</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="字体类型font-family"><a href="#字体类型font-family" class="headerlink" title="字体类型font-family"></a>字体类型font-family</h3><ul>
+<li>属性名：<code>font-family</code></li>
+<li>常见取值：具体字体1，具体字体2，具体字体3……字体系列<ul>
+<li>具体字体：”Microsoft YaHei”，微软雅黑，黑体，宋体，楷体等</li>
+<li>字体系列：sans-serif,serif,monospace</li>
+</ul>
+</li>
+<li>渲染规则：<ol>
+<li>从左往右按照顺序查找，如果电脑中未安装该字体，则显示下一个字体</li>
+<li>如果都不支持，此时会根据操作系统，显示最后字体系列的默认字体</li>
+</ol>
+</li>
+<li>注意点<ol>
+<li>如果字体名称存在多个单词，推荐使用引号包裹</li>
+<li>最后一项字体系列不需要引号包裹</li>
+<li>网页开发时，尽量使用系统常见自带字体，保证不同用户浏览网页都可以正确显示，windows系统默认字体是微软雅黑，macOS系统默认字体是苹方</li>
+</ol>
+</li>
+<li>拓展：样式的层叠问题<br>  如果给同一个标签设置了相同的属性，此时样式会层叠（覆盖），写在最下面的会生效</li>
+</ul>
+<h3 id="字体类型font属性连写"><a href="#字体类型font属性连写" class="headerlink" title="字体类型font属性连写"></a>字体类型font属性连写</h3><ul>
+<li>属性名：<code>font</code></li>
+<li>取值：<code>font:style weight size family</code></li>
+<li>省略要求：只能省略前两个，如果省略了相当于设置了默认值</li>
+<li>注意点：如果需要同时设置单独和连写形式，要么把单独的样式写在连写的下面，要么把单独的样式写在连写的里面</li>
+</ul>
+<h2 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h2><h3 id="文本缩进：text-indent"><a href="#文本缩进：text-indent" class="headerlink" title="文本缩进：text-indent"></a>文本缩进：text-indent</h3><p>属性名：<code>text-indent</code><br>取值：</p>
+<ul>
+<li>数字+px</li>
+<li>数字+em（推荐：1em&#x3D;当前标签的font-size的大小）</li>
+</ul>
+<h3 id="文本水平对齐方式：text-align"><a href="#文本水平对齐方式：text-align" class="headerlink" title="文本水平对齐方式：text-align"></a>文本水平对齐方式：text-align</h3><p>属性名：<code>text-align</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">left</td>
+<td align="center">左对齐</td>
+</tr>
+<tr>
+<td align="center">center</td>
+<td align="center">居中对齐</td>
+</tr>
+<tr>
+<td align="center">right</td>
+<td align="center">右对齐</td>
+</tr>
+</tbody></table>
+<p>注意点：如果需要让文本水平居中，text-align属性给文本所在标签（文本的父元素）设置<br>text-align:center能够让文本，span标签，a标签，input标签，img标签居中，如果要让以上元素水平居中，text-align:center需要给以上的父元素设置</p>
+<h3 id="文本修饰：text-decoration"><a href="#文本修饰：text-decoration" class="headerlink" title="文本修饰：text-decoration"></a>文本修饰：text-decoration</h3><p>属性名：<code>text-decoration</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">属性值</th>
+<th align="center">效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">underline</td>
+<td align="center">下划线（常用）</td>
+</tr>
+<tr>
+<td align="center">line-through</td>
+<td align="center">删除线（不常用）</td>
+</tr>
+<tr>
+<td align="center">overline</td>
+<td align="center">上划线（几乎不用）</td>
+</tr>
+<tr>
+<td align="center">none</td>
+<td align="center">无装饰线（常用）</td>
+</tr>
+</tbody></table>
+<p>注意点：开发中会使用<code>text-decoration:none</code>清除a标签默认的下划线</p>
+<h2 id="line-height行高"><a href="#line-height行高" class="headerlink" title="line-height行高"></a>line-height行高</h2><ul>
+<li>作用：控制一行的上下行间距</li>
+<li>属性名：<code>line-height</code></li>
+<li>取值：<ul>
+<li>数字+px</li>
+<li>倍数（当前标签font-size的倍数）</li>
+</ul>
+</li>
+<li>应用：<ol>
+<li>让单行文本垂直居中可以设置line-height:文字父元素高度</li>
+<li>网页精准布局时，会设置line-height:1可以取消上下间距</li>
+</ol>
+</li>
+</ul>
  
       <!-- reward -->
       
@@ -184,21 +382,32 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/03/10/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2024/03/10/css%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
     </footer>
   </div>
 
    
   <nav class="article-nav">
     
+      <a href="/2024/03/10/hello-world/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Hello World
+          
+        </div>
+      </a>
     
-      <a href="/2024/03/10/css%E5%9F%BA%E7%A1%80%E8%AE%A4%E7%9F%A5/" class="article-nav-link">
+    
+      <a href="/2024/03/10/css%E8%BF%9B%E9%98%B6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">CSS基础认知</div>
+        <div class="article-nav-title">css进阶</div>
       </a>
     
   </nav>
