@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-09T07:20:30.273Z</updated>
+  <updated>2024-03-19T07:41:55.322Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VMware配置Ubuntu环境</title>
+    <link href="http://example.com/2024/03/19/exper1/"/>
+    <id>http://example.com/2024/03/19/exper1/</id>
+    <published>2024-03-18T16:00:00.000Z</published>
+    <updated>2024-03-19T07:41:55.322Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;实验1：建立Linux环境&quot;&gt;&lt;a href=&quot;#实验1：建立Linux环境&quot; class=&quot;headerlink&quot; title=&quot;实验1：建立Linux环境&quot;&gt;&lt;/a&gt;实验1：建立Linux环境&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

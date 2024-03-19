@@ -1512,4 +1512,110 @@
         <tag>css</tag>
       </tags>
   </entry>
+  <entry>
+    <title>VMware配置Ubuntu环境</title>
+    <url>/2024/03/19/exper1/</url>
+    <content><![CDATA[<h1 id="实验1：建立Linux环境"><a href="#实验1：建立Linux环境" class="headerlink" title="实验1：建立Linux环境"></a>实验1：建立Linux环境</h1><hr>
+<p>[TOC]</p>
+<h1 id="实验目标"><a href="#实验目标" class="headerlink" title="实验目标"></a>实验目标</h1><ol>
+<li>熟悉VMware虚拟机的用法，配置Ubuntu Linux实验环境</li>
+<li>了解和使用Linux常用shell工具，并掌握通用的帮助或手册用法</li>
+<li>能够使用基础命令查看主机名，网络配置</li>
+<li>能够查看CPU,内存配置与使用状态以及系统内核版本与发行版本</li>
+<li>能够完成与宿主机的网络配置，理解不同网络配置类型的区别</li>
+<li>能够对常用软件镜像源进行修改</li>
+<li>能够在 Linux 环境中配置 SSH 服务</li>
+<li>熟练使用命令行或 GUI 工具通过 SSH 远程连接 Linux</li>
+</ol>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="下载并安装VMware"><a href="#下载并安装VMware" class="headerlink" title="下载并安装VMware"></a>下载并安装VMware</h2><ol>
+<li>到官网下载VMware安装程序，网址：<br><a href="https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html">https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html</a><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm1.png" alt="alt text"><br>网页下翻，找到<code>workstation 17 Pro for Windows</code>，点击download now即可跳转到下载页面</li>
+<li>以VMware workstation 17 Pro为例，进入安装向导界面<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm2.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm3.png" alt="alt text"><br>安装位置可以选择默认，这里选择更改安装位置<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm4.png" alt="alt text"><br>这里取消勾选<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm5.png" alt="alt text"><br>这里保持不变<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm6.png" alt="alt text"><br>点击安装，开始安装VMware<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm7.png" alt="alt text"><br>完成安装</li>
+<li>激活VMware<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm8.png" alt="alt text"><br>  正版VMware需要用许可证密钥激活才可以正常使用，否则只提供30天的适用期，上网搜索相应版本许可证密钥，激活VMware</li>
+<li>更改VMware主题颜色<br>  VMware默认是浅色主题，个人更喜欢深色，打开VMware,点击左上方工具栏的编辑-&gt;首选项-&gt;显示，调整颜色主题为深色即可<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm9.png" alt="alt text"><br>更改后效果如图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/vm10.png" alt="alt text"></li>
+</ol>
+<h2 id="下载Ubuntu镜像文件"><a href="#下载Ubuntu镜像文件" class="headerlink" title="下载Ubuntu镜像文件"></a>下载Ubuntu镜像文件</h2><p>到官网下载Ubuntu镜像，官网地址：<br><a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a><br>在如下界面点击download……，即可下载最新且稳定版本的Ubuntu<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/Ubuntu1.png" alt="alt text"><br>图片中显示的版本是22.04.4，如果想要下载之前的版本，只需要点击下方的<code>see our alternative downloads</code>然后找到自己想要下载的版本即可，本次实验进行演示的版本是22.04.3</p>
+<h2 id="新建虚拟机并写入Ubuntu-ISO镜像"><a href="#新建虚拟机并写入Ubuntu-ISO镜像" class="headerlink" title="新建虚拟机并写入Ubuntu ISO镜像"></a>新建虚拟机并写入Ubuntu ISO镜像</h2><h3 id="新建虚拟机"><a href="#新建虚拟机" class="headerlink" title="新建虚拟机"></a>新建虚拟机</h3><p>进入VMware，点击新建虚拟机，进入虚拟机安装向导，选择自定义（高级）<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-1.png" alt="alt text"><br>先创建好虚拟机，然后再安装系统，因此这里选择稍后安装操作系统<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-2.png" alt="alt text"><br>完善安装系统的信息<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-3.png" alt="alt text"><br>给虚拟机起一个名字，这里个人习惯使用系统版本号命名，然后选择安装位置，可以是默认，这里选择更改安装位置<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-4.png" alt="alt text"><br>这里个人使用不做大型项目，无需更改<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-5.png" alt="alt text"><br>分配内存，这里使用推荐的4GB，也可以自己略微调整<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-6.png" alt="alt text"><br>为了使虚拟机可以联网，这里选择NAT模式<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-7.png" alt="alt text"><br>以下选项选择默认即可，无需更改<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-8.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-9.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-10.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-11.png" alt="alt text"><br>磁盘文件路径可以选择默认，这里自定义<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-12.png" alt="alt text"><br>检查一下刚才的配置是否和需求相符，完成新建虚拟机<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-13.png" alt="alt text"></p>
+<h3 id="写入ISO镜像"><a href="#写入ISO镜像" class="headerlink" title="写入ISO镜像"></a>写入ISO镜像</h3><p>  在左上方工具栏中依次点击虚拟机-&gt;设置-&gt;CD&#x2F;DVD，选择使用ISO映像文件，并指定为下载好的Ubuntu镜像文件路径<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-14.png" alt="alt text"><br>  开启Ubuntu 22.04.3虚拟机，准备安装Ubuntu系统，进入如下页面，回车<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-15.png" alt="alt text"><br>  等待一段时间后开始安装，选择install ubuntu<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-16.png" alt="alt text"><br>  键盘布局选择默认即可<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-17.png" alt="alt text"><br>  这里不需要更改<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-18.png" alt="alt text"><br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-19.png" alt="alt text"><br>  选择地区，这里随意<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-20.png" alt="alt text"><br>  设置用户名和密码<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-21.png" alt="alt text"><br>  开始Ubuntu的安装<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-22.png" alt="alt text"><br>  安装成功<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-23.png" alt="alt text"></p>
+<h2 id="vmtools的安装"><a href="#vmtools的安装" class="headerlink" title="vmtools的安装"></a>vmtools的安装</h2><p>按照上述流程安装好系统后，点击vmware左上方工具栏中的<code>虚拟机</code>，发现<code>重新安装VMware Tools</code>是灰色的，如果要检测vmtools是否可以使用，可以尝试是否能将主机的文件复制到虚拟机中，如果可以，则说明vmtools已经安装好了<br>同时，如果vmtools没有安装，则系统界面的大小不会随着vmware的大小而改变，通常是一个较小的界面，通过此方法也可以检验是否安装好了vmtools<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-24.png" alt="alt text"><br>vmtools会让使用虚拟机更加便捷，但是有时候也会出现不稳定的情况，例如重新启动会识别不到共享文件夹，突然从主机无法复制文件到虚拟机等，下面演示如何重新安装vmtools<br>关闭虚拟机，在左上方工具栏中点击虚拟机-&gt;设置，将CD&#x2F;DVD选项更改为vmware安装目录下的<code>linux.iso</code>文件，然后再次启动虚拟机<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-25.png" alt="alt text"><br>重新启动后观察左侧出现vmware tools的光盘文件，点开之后将压缩包拷贝出来，这里个人选择download文件夹，然后解压文件<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-26.png" alt="alt text"><br>解压命令如下，其中当输入VM后，可以直接按Tab键补全文件名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf VMwareTools-10.3.23-16594550.tar.gz</span><br></pre></td></tr></table></figure>
+<p><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-27.png" alt="alt text"><br>然后进入解压后的文件夹，运行vmware tools的安装程序，在上图的终端中继续敲如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd vmware-tools-distrib/    //进入解压后的文件夹</span><br><span class="line">sudo ./vmware-install.pl    //运行安装程序</span><br></pre></td></tr></table></figure>
+<p>其中sudo的意义是使用超级管理员权限运行该条命令，需要输入密码，输入密码时不显示，正常输入即可<br>安装过程中只需要点击回车即可，安装成功后终端最后的情况如图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-28.png" alt="alt text"><br>注意：vmtools安装完成后还需将虚拟机中CD选项更改回原来的ubuntu的镜像文件</p>
+<h2 id="几个常用命令的使用"><a href="#几个常用命令的使用" class="headerlink" title="几个常用命令的使用"></a>几个常用命令的使用</h2><h3 id="高频使用命令"><a href="#高频使用命令" class="headerlink" title="高频使用命令"></a>高频使用命令</h3><p><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-29.png" alt="alt text"></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ps</td>
+<td align="center">显示当前进程的状态</td>
+</tr>
+<tr>
+<td align="center">ls</td>
+<td align="center">列出当前目录下的文件和文件夹</td>
+</tr>
+<tr>
+<td align="center">date</td>
+<td align="center">显示当前时间</td>
+</tr>
+<tr>
+<td align="center">hostname</td>
+<td align="center">显示当前用户名</td>
+</tr>
+<tr>
+<td align="center">uname</td>
+<td align="center">显示操作系统信息</td>
+</tr>
+<tr>
+<td align="center">top</td>
+<td align="center">动态实时的显示系统中进程的资源占用情况</td>
+</tr>
+</tbody></table>
+<h3 id="查看两种帮助文档的不同"><a href="#查看两种帮助文档的不同" class="headerlink" title="查看两种帮助文档的不同"></a>查看两种帮助文档的不同</h3><ol>
+<li>使用man命令<br>输入命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">man ls &gt; manls.txt    //将man ls 查看的结果写入manls文本文件中</span><br></pre></td></tr></table></figure>
+打开manls.txt文件，共245行<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-30.png" alt="alt text"></li>
+<li>使用command –help<br>输入命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls --help &gt; lshelp.txt   //将ls的帮助文档写入lshelp文本文件中</span><br></pre></td></tr></table></figure>
+打开lshelp文件，共120行<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-31.png" alt="alt text"></li>
+<li>两者不同点<br>man显示的关于命令的使用方法，可选参数等的描述更加详细，选项也更多，更具体的记录了命令的使用</li>
+</ol>
+<h3 id="通过cat查看CPU信息和内存信息"><a href="#通过cat查看CPU信息和内存信息" class="headerlink" title="通过cat查看CPU信息和内存信息"></a>通过cat查看CPU信息和内存信息</h3><p>输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat /proc/cpuinfo &gt; cpuinfo.txt</span><br><span class="line">cat /proc/miminfo &gt; miminfo.txt</span><br></pre></td></tr></table></figure>
+<p>在本机中，任务栏右键打开任务管理器，在性能栏中选择CPU，查看CPU信息<br>本机CPU信息和ubuntu中刚才生成的cpuinfo.txt文件对比，发现二者一致<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-32.png" alt="alt text"><br>同样的方法查看本机内存信息和miminfo.txt文件，二者也一致<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-33.png" alt="alt text"></p>
+<h2 id="虚拟机网络配置"><a href="#虚拟机网络配置" class="headerlink" title="虚拟机网络配置"></a>虚拟机网络配置</h2><ol>
+<li>桥接模式<br>原理图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/bridge.png" alt="alt text"><br>桥接网络是指本地物理网卡和虚拟网卡通过VMnet0虚拟交换机进行桥接，物理网卡和虚拟网卡在拓扑图上处于同等地位，那么物理网卡和虚拟网卡就相当于处于同一个网段，虚拟交换机就相当于一台现实网络中的交换机,所以两个网卡的IP地址也要设置为同一网段<br>当我们要在局域网使用虚拟机，对局域网其他pc提供服务时，例如提供ftp，提供ssh，提供http服务，那么就要选择桥接模式</li>
+<li>NAT模式<br>原理图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/NAT.png" alt="alt text"><br>NAT模式中，就是让虚拟机借助NAT(网络地址转换)功能，通过宿主机器所在的网络来访问公网<br>NAT模式中，虚拟机的网卡和物理网卡的网络，不在同一个网络，虚拟机的网卡，是在vmware提供的一个虚拟网络<br>linux系统可以访问外界，但是外界访问不了这个linux系统，因为不知道这个局域网<br>ping测试连通性<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-34.png" alt="alt text"><br>NAT模式下，宿主机可以ping通虚拟机</li>
+<li>仅主机模式(host-only)<br>原理图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/host-only.png" alt="alt text"><br>在Host-Only模式下，虚拟网络是一个全封闭的网络，它唯一能够访问的就是主机。其实Host-Only网络和NAT网络很相似，不同的地方就是Host-Only网络没有NAT服务，所以虚拟网络不能连接到Internet。主机和虚拟机之间的通信是通过VMware Network Adepter VMnet1虚拟网卡来实现的</li>
+</ol>
+<h2 id="更换下载源"><a href="#更换下载源" class="headerlink" title="更换下载源"></a>更换下载源</h2><p>编辑相应配置文件，输入以下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/apt/sources.list  //编辑sources.list文件</span><br></pre></td></tr></table></figure>
+<p>将如下内容替换到文件中，这里更换的是国内的清华源<br>注意：最好将原有文件做一个备份，然后再进行替换，注意是全部替换，即先将原有文件清空再将内容复制进去</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">  </span><br><span class="line"># 预发布软件源，不建议启用</span><br><span class="line"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<p>编辑完成后保存退出，输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get update  //更新源</span><br></pre></td></tr></table></figure>
+
+<p>更新成功<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-35.png" alt="alt text"></p>
+<h2 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h2><h3 id="使用apt下载openssl服务端并进行服务端配置"><a href="#使用apt下载openssl服务端并进行服务端配置" class="headerlink" title="使用apt下载openssl服务端并进行服务端配置"></a>使用apt下载openssl服务端并进行服务端配置</h3><p>输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl</span><br></pre></td></tr></table></figure>
+<p><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-36.png" alt="alt text"><br>安装完成<br>编辑ssh配置文件，输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo gedit /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>主要经常更改的配置下图已标出<br>默认情况需要密码认证，如图所示，如需关闭，取消注释，然后将yes改成no<br>也可以修改端口号，一定程度上提高安全性<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-37.png" alt="alt text"></p>
+<h3 id="宿主机ssh连接虚拟机"><a href="#宿主机ssh连接虚拟机" class="headerlink" title="宿主机ssh连接虚拟机"></a>宿主机ssh连接虚拟机</h3><p>虚拟机中下载openssh-sever,输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure>
+<p>下载完成后，ssh服务默认开启<br>在宿主机中打开cmd，输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh black@192.168.232.128</span><br></pre></td></tr></table></figure>
+<p>注意：ssh的连接方式为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh 用户名@目标主机ip地址</span><br></pre></td></tr></table></figure>
+<p>连接成功截图<br><img src="/images/VMware%E9%85%8D%E7%BD%AEUbuntu/image-38.png" alt="alt text"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
 </search>
